@@ -1,14 +1,34 @@
-let exampleArrayTwo = [1, 2, 3, 4, 5, 6]
-exampleArrayTwo.count
+// Ex 4.1
+let exampleArray = [1, 2, 3, 10, 4, 5, 6]
+exampleArray.count
 
-func recursiveSum(source: [Int], _ total: Int = 0) -> Int {
+func recSum(source: [Int], _ total: Int = 0) -> Int {
     if let head = source.first {
         let tail = Array(source.dropFirst())
-        return recursiveSum(source: tail, head + total)
+        return recSum(source: tail, head + total)
     }
     else{
         return total
     }
 }
 
-recursiveSum(source: exampleArrayTwo)
+recSum(source: exampleArray)
+
+
+
+// Ex 4.3
+func recMax(source: [Int], _ max: Int = 0) -> Int {
+    if let head = source.first {
+        let tail = Array(source.dropFirst())
+        if head > max {
+            return recMax(source: tail, head)
+        } else {
+            return recMax(source: tail, max)
+        }
+    }
+    else{
+        return max
+    }
+}
+
+recMax(source: exampleArray)
