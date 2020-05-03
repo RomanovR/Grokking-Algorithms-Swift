@@ -1,6 +1,6 @@
 
 func factorial(x: Double) -> Double {
-    if x == 1 {
+    if x == 1 || x == -1 {
         return x
     }
     else{
@@ -8,4 +8,4 @@ func factorial(x: Double) -> Double {
     }
 }
 
-factorial(x: 3)
+factorial(x: -3)
